@@ -20,9 +20,14 @@ header{
 }
 
 nav{
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+nav div{
+    display: none;
 }
 
 nav ul{
@@ -108,7 +113,8 @@ i{
     margin: 0 auto;
     margin-top: 80px;
     margin-bottom: 80px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
     align-items: center;
     justify-content: space-evenly;
     padding: 15px 10px;
@@ -118,7 +124,7 @@ i{
 
 /* popular collection section starts here */
 .popular_collection{
-    width: 85%;
+    width: 80%;
     margin: 0 auto;
     text-align: center;
     /* border: 1px solid saddlebrown; */
@@ -135,7 +141,7 @@ i{
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    row-gap: 20px;
     /* border: 1px solid saddlebrown; */
 }
 
@@ -154,9 +160,13 @@ i{
     gap: 0;
 }
 
+.card img{
+    width: 100%;
+    margin-bottom: 10px;
+}
 
 .card h1{
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 800;
 }
 
@@ -168,6 +178,7 @@ i{
 }
 
 .card p{
+    font-size: 1rem;
     color: Gray ;
 }
 
@@ -175,7 +186,7 @@ i{
     color: rgb(251, 130, 0);
     margin-right: 5px;
     margin-left: 3px;
-    margin-bottom: 3px;
+    margin-bottom: 10px;
     font-weight: bold;
 }
 
@@ -183,10 +194,20 @@ i{
     margin-bottom: 10px;
     padding-left: 5px;    
 }
+
+.see_more{
+    position: absolute;
+    right: 10%;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: rgb(224, 44, 109);
+    text-decoration: none;
+}
 /* popular collection section ends here */
 
-/* featured product section */
 
+/* featured product section */
 .featured_product_section{
     width: 85%;
     margin: 0 auto;
@@ -198,12 +219,19 @@ i{
     gap: 50px;
 }
 
+.featured_product_section p{
+   color: rgb(108, 108, 108);
+   font-size: 1rem;
+   margin-top: 10px;
+   margin-bottom: 20px;
+}
+
 .join_now_btn{
     color: #fff;
     font-size: 1rem;
     background-color: rgb(224, 44, 109);
-    border-radius: 41px;
-    padding: 15px 30px;
+    border-radius: 10px;
+    padding: 12px 30px;
     border: none;
 }
 
@@ -217,9 +245,19 @@ footer{
     justify-content: center;
     gap: 10px;
     padding: 40px 0;
+    font-size: 1.2rem;
+}
+
+
+footer p{
+    font-size: 0.8rem;
+    font-weight: 500;
+    opacity: 0.7;
+    margin-bottom: 0;
 }
 
 footer div{
+    margin-top: 15px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -231,6 +269,41 @@ footer div{
 /* responsive design for mobile device */
 
 @media screen  and (max-width:576px) {
+
+    nav ul {
+        display: none;
+    }
+
+    nav div{
+        display: block;
+    }
+
+    .banner{
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+
+    .brand_logo_section{
+        /* grid-template-rows: repeat(2, 1fr); */
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        gap: 20px;
+        
+    }
+
+    .brand_logo_section img{
+        width: 90%;
+    }
+
+    .featured_product_section{
+        flex-direction: column-reverse;
+    }
+
+    .featured_product_section img{
+        width: 100%;
+    }
+
     .card_container{        
         grid-template-columns: repeat(1, 1fr); 
         align-items: center;
